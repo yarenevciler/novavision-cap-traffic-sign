@@ -4,7 +4,7 @@
 CFG = {
     "data": {
         "path": "oxford_iiit_pet:3.2.0",
-        "image_size": 128,
+        "image_size": 30,
         "load_with_info": True
     },
     "train": {
@@ -18,7 +18,7 @@ CFG = {
         "metrics": ["accuracy"]
     },
     "model": {
-        "input": [128, 128, 3],
+        "input": [30, 30, 3],
         "up_stack": {
             "layer_1": 512,
             "layer_2": 256,
