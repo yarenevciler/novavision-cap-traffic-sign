@@ -24,6 +24,8 @@ class UnetInferrer(Capsule):
         self.images = self.request.get_param("ImageList")
 
 
+
+
     @staticmethod
     def bootstrap():
         config = Config.from_json(CFG)
