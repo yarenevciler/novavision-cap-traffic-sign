@@ -19,6 +19,8 @@ python inference.py
 The output should be in JSON format, printed on the terminal screen, and the json must include the class of the given input image.
 ## Directory Structure
 ```
+
+
 apps
    |-- inference.py
    |-- train.py
@@ -56,6 +58,7 @@ src
 tests
    |-- unet_inferrer.py
 ```
+## Functionality of the Used Files in the Capsule:
 * Apps:
   * inference.py: Used to create a JSON request using classes defined in PackageModel.
 * Notebooks:
