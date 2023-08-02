@@ -125,6 +125,10 @@ class TrafficInferrer(Capsule):
                    42: 'End of no passing',
                    43: 'End no passing veh > 3.5 tons'}
         sign = classes[pred + 1]
+
         algilanan = {"alginlanan_tip": sign}  # "image": image.numpy().tolist()}
+
+
         algilanan = json.dumps(algilanan)
-        return algilanan
+
+        return  algilanan

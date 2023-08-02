@@ -17,6 +17,10 @@ from capsules.capTrafficSignClassifier.src.models.PackageModel import PackageMod
 ENDPOINT_URL = "http://127.0.0.1:8000/api"
 
 
+
+
+
+
 def inference():
     config = Config.from_json(CFG)
     image_data =Image(name="image", uID="323332", mime_type="image/jpg", encoding="base64",value =image.encode64(np.asarray(cv2.imread(config.project.path +'/capsules/capTrafficSignClassifier/resources/00001.png')).astype(np.float32),'image/jpg'), type="imageList", field="img")
@@ -31,11 +35,18 @@ def inference():
     executor = PackageExecutor(value=trafficExecutor)
     request = PackageModel(executor=executor, name="Traffic")
     request_json = json.loads(request.json())
+    save_json_to_file(request_json,os.path.join(config.project.path, 'capsules/capTrafficSignClassifier/resources', 'request_data.json'))
+    print(request_json)
+
     response = requests.post(ENDPOINT_URL, json =request_json)
-    print(response.raise_for_status())
-    print(response.json())
+
+    #print(response.raise_for_status())
+    #print(response.json())
 
 
+def save_json_to_file(json_data, filename): #Json verisini bir dosyaya yazar.
+    with open(filename, 'w') as f:
+        f.write(json.dumps(json_data)) #Json_data sözlüğünü JSON biçimine dönüştürür.
 
 
 
