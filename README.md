@@ -73,3 +73,5 @@ tests
     * PackageModel.py: Contains class definitions for creating JSON requests and responses using the pydantic module.
   * Weights:
     * Trafic_signs_model3.h5: we used the weight of the model we trained in colab
+## Capsule Workflow
+The TrafficSignsmodel weight file used in the capTrafficSignClassify capsule is trained with 31375 images of different sizes. In inference, the JSON request is created using the classes in the packagemodel. The place where JSON object classes are written in the package model is referred to as the "package model" itself.This request is then sent to the trafficsign executor file. The trafficsign executor file generates a response JSON in response to the request.
